@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>recipie-app</title>
+  </head>
+  <body>
+    <div class="card-container">
+      <div class="card-left">
+        <div class="logo">Cookz</div>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+        <ul class="menu-items">
+          <li class="menu-link">
+            <i class="fas fa-home" style="margin-top: 3px"></i> Home
+          </li>
+          <li class="menu-link">
+            <i class="fas fa-search" style="margin-top: 3px"></i> Browse
+          </li>
+          <li class="menu-link">
+            <i class="far fa-bookmark" style="margin-top: 3px"></i> Bookmarks
+          </li>
+          <li class="menu-link">
+            <i class="fas fa-plus" style="margin-top: 3px"></i> Add recipe
+          </li>
+        </ul>
+      </div>
+      <div class="card-right" id="home-page">
+        <div class="nav-bar">
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Seach by food name" />
+          </div>
+          <!-- <div class="bookmark"><i class="fas fa-bookmark"></i></div> -->
+        </div>
+        <div class="recommended-section">
+          <div class="previous"><i class="fas fa-chevron-circle-left"></i></div>
+          <div class="dish active">
+            <img src="./images/cake-recommened.jpg" alt="" />
+            <p>Cake</p>
+          </div>
+          <div class="dish active">
+            <img src="./images/chicken-recommended.jpg" alt="" />
+            <p>Chicken</p>
+          </div>
+          <div class="dish active">
+            <img src="./images/donuts-recommended.jpg" alt="" />
+            <p>Donut</p>
+          </div>
+          <div class="dish active">
+            <img src="./images/ice-ceram-recommended.webp" alt="" />
+            <p>Ice Cream</p>
+          </div>
+          <div class="dish active">
+            <img src="./images/salami-recommended.webp" alt="" />
+            <p>Salami</p>
+          </div>
+          <div class="dish">
+            <img
+              src="https://cdn.pixabay.com/photo/2017/03/23/19/57/asparagus-2169305_1280.jpg"
+              alt=""
+            />
+            <p>Steak</p>
+          </div>
+          <div class="dish">
+            <img
+              src="https://cdn.pixabay.com/photo/2017/11/13/03/56/mango-catfish-taco-2944558_1280.jpg"
+              alt=""
+            />
+            <p>Tacos</p>
+          </div>
+          <div class="dish">
+            <img
+              src="https://cdn.pixabay.com/photo/2020/06/24/22/45/hot-dog-5337929_1280.jpg"
+              alt=""
+            />
+            <p>Sausage</p>
+          </div>
+          <div class="dish">
+            <img
+              src="https://cdn.pixabay.com/photo/2017/01/06/17/27/caramel-1958386_1280.jpg"
+              alt=""
+            />
+            <p>Pudding</p>
+          </div>
+          <div class="dish">
+            <img
+              src="https://cdn.pixabay.com/photo/2017/09/18/15/14/french-fries-2762014_1280.jpg"
+              alt=""
+            />
+            <p>Fries</p>
+          </div>
+          <div class="next"><i class="fas fa-chevron-circle-right"></i></div>
+        </div>
+        <h2>Daily Best recipes</h2>
+        <div class="best-recipie-section"></div>
+      </div>
+      <div class="card-right" id="search-results">
+        <div class="nav-bar">
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Seach by food name" />
+          </div>
+          <!-- <div class="bookmark"><i class="fas fa-bookmark"></i></div> -->
+        </div>
+      </div>
+      <div class="card-right" id="bookmark-section">
+        <h1>Your Bookmarks</h1>
+        <div class="bookmark-card-container"></div>
+      </div>
+      <div class="card-right" id="add-recipe-section">
+        <form action="">
+          <h1 class="form-heading">Recipe Data</h1>
+          <div class="form-group">
+            <label>Title</label>
+            <input
+              placeholder="Enter recipe title"
+              required
+              name="title"
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <label>URL</label>
+            <input
+              placeholder="Enter recipe url"
+              required
+              name="sourceUrl"
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <label>Image URL</label>
+            <input
+              placeholder="Enter recipe image"
+              required
+              name="image"
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <label>Publisher</label>
+            <input
+              placeholder="Enter recipe publisher"
+              required
+              name="publisher"
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <label>Prep time</label>
+            <input
+              placeholder="prep time"
+              required
+              name="cookingTime"
+              type="number"
+            />
+          </div>
+          <div class="form-group">
+            <label>Servings</label>
+            <input
+              placeholder="serving"
+              required
+              name="servings"
+              type="number"
+            />
+          </div>
+        <div style="display: flex; column-gap: 1rem; margin-top: 10px;">
+          <h1 class="form-heading">Ingredients</h1>
+          <div class="add-ingredients"><i class="fas fa-plus" style="margin-top: 16px"></i></div></i>
+        </div>
+        <div id="ingredients-form">
+          <div class="form-group">
+            <label>Ingredient <span>1</span></label>
+            <input
+              type="text"
+              required name="ingredient 1"
+              placeholder="'Qty,Unit,Des'"
+            />
+          </div>
+        </div>
+        <button class="upload-btn">Upload Recipe</button>
+      </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
