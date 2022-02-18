@@ -372,7 +372,7 @@ a {
 }
 #bookmark-section h1 {
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .bookmark-card-container {
   margin: 20px 0;
@@ -434,7 +434,6 @@ form,
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  padding: 15px 0;
 }
 #ingredients-form {
   width: 100%;
@@ -645,6 +644,7 @@ form,
   .food-img::before {
     width: 100%;
     height: 45%;
+    border-radius: 0;
   }
   .recipe__ingredient-list {
     display: flex;
@@ -662,6 +662,12 @@ form,
   .food-title {
     font-size: 34px;
     line-height: 38px;
+  }
+  .search-results-container {
+    gap: 2.5rem;
+  }
+  .search-recipe-card {
+    width: calc(50% - 1.25rem);
   }
 }
 @media (max-width: 580px) {
@@ -713,6 +719,10 @@ form,
   h2 {
     margin: 30px 0 15px;
   }
+  .search-recipe-card {
+    height: 75px;
+    width: 95%;
+  }
 }
 @media (max-width: 520px) {
   .card-container {
@@ -739,13 +749,7 @@ form,
   /* .food-img::before {
     display: none;
   } */
-  .search-results-container {
-    gap: 2.5rem;
-  }
-  .search-recipe-card {
-    height: 75px;
-    width: 95%;
-  }
+
   .bookmark-card-container {
     flex-direction: column;
     overflow-x: unset;
@@ -778,5 +782,16 @@ form,
 @media (max-width: 470px) {
   .dish {
     min-width: calc(33.33% - 0.67rem);
+  }
+  .food-img::before {
+    display: none;
+  }
+}
+@media (max-width: 426px) {
+  .recipe__ingredient-list {
+    flex-direction: column;
+  }
+  .recipe__ingredient-list li {
+    width: 100%;
   }
 }
