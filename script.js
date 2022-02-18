@@ -521,11 +521,13 @@ const uploadRecipe = async function (newRecipe) {
       body: JSON.stringify(recipe),
     });
     const data = await response.json();
+    if (data.status == "fail") alert(data.message);
     state.recipe = createRecipeObject(data);
     addBookmark(state.recipe);
+    uploadRecipeBtn.innerHTML = `Uploaded`;
     setTimeout(function () {
-      alert("Recipe successfully added");
       window.location.hash = "#bookmark-section";
+      document.querySelector("form").reset();
     }, 2000);
   } catch (err) {
     alert(err);
@@ -541,8 +543,12 @@ const redirectPage = function (link) {
     window.location.hash = `#search-${
       state.search.query ? state.search.query : "burger"
     }`;
+    if ((window.location.hash = "#serach-burger")) {
+      loadSearchResults("burger");
+    }
   } else if (link.textContent.trim() == "Bookmarks") {
     window.location.hash = "#bookmark-section";
+    console.log(bookmarkPage.children[1].children.length);
   } else if (link.textContent.trim() == "Add recipe") {
     window.location.hash = "#add-recipe-section";
   }
@@ -622,6 +628,11 @@ window.addEventListener("hashchange", function () {
     searchPage.style.display = "none";
     bookmarkPage.style.display = "block";
     addRecipePage.style.display = "none";
+    if (bookmarkPage.children[1].children.length <= 1) {
+      bookmarkPage.children[1].innerHTML = `<div class="err-msg">Oops!! No bookmarks saved for now..</div>`;
+    } else {
+      bookmarkPage.querySelector(".err-msg").remove();
+    }
     if (document.querySelector(".recipe-modal")) {
       document.querySelector(".recipe-modal").style.display = "none";
     }
