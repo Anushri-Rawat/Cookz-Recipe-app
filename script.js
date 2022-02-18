@@ -260,7 +260,6 @@ const createRecipieModal = function (data, preloaction) {
   toggleBookmark(data);
   modal.querySelector(".back-btn").addEventListener("click", function (e) {
     e.preventDefault();
-    console.log(window.history);
     window.location.hash = `${
       preloaction
         ? preloaction
@@ -628,10 +627,11 @@ window.addEventListener("hashchange", function () {
     searchPage.style.display = "none";
     bookmarkPage.style.display = "block";
     addRecipePage.style.display = "none";
-    if (bookmarkPage.children[1].children.length <= 1) {
+    if (bookmarkPage.children[1].children.length < 1) {
       bookmarkPage.children[1].innerHTML = `<div class="err-msg">Oops!! No bookmarks saved for now..</div>`;
     } else {
-      bookmarkPage.querySelector(".err-msg").remove();
+      bookmarkPage.querySelector(".err-msg") &&
+        bookmarkPage.querySelector(".err-msg").remove();
     }
     if (document.querySelector(".recipe-modal")) {
       document.querySelector(".recipe-modal").style.display = "none";
