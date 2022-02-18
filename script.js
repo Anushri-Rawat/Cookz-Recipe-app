@@ -543,7 +543,7 @@ const redirectPage = function (link) {
     window.location.hash = `#search-${
       state.search.query ? state.search.query : "burger"
     }`;
-    if ((window.location.hash = "#serach-burger")) {
+    if ((window.location.hash = "#search-burger")) {
       loadSearchResults("burger");
     }
   } else if (link.textContent.trim() == "Bookmarks") {
