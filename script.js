@@ -584,6 +584,7 @@ function showPreviousItem() {
     image[i].classList.add("active");
   }
 }
+
 //---------------Loader------------------------
 function renderLoader(parentEl) {
   const markup = `
@@ -593,9 +594,11 @@ function renderLoader(parentEl) {
   parentEl.style.position = "relative";
   parentEl.insertAdjacentHTML("afterbegin", markup);
 }
+
 function removeLoader() {
   document.querySelector(".loader").remove();
 }
+
 //-----------------window eventlistener----------------------------
 
 window.location.hash = "#home-page";

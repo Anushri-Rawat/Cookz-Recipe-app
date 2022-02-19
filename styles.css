@@ -270,6 +270,7 @@ h2 {
   font-size: 38px;
   font-weight: 400;
   margin: 10px 0;
+  line-height: 46px;
 }
 .food-img img {
   width: 100%;
@@ -297,15 +298,11 @@ h2 {
   padding: 10px 20px;
   border-radius: 6px;
   border: none;
-  background: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
   font-size: 18px;
   color: white;
   z-index: 200;
   cursor: pointer;
-  transform: all ease 2s;
-}
-.back-btn:hover {
-  background-color: rgba(0, 0, 0, 0.3);
 }
 .ratings-and-bookmark {
   display: flex;
@@ -362,7 +359,7 @@ a {
   background: #ff8750;
   color: white;
   font-size: 18px;
-  padding: 15px 40px;
+  padding: 10px 30px;
   border-radius: 50px;
   text-decoration: none;
 }
@@ -700,12 +697,20 @@ form,
   }
   .recommended-section {
     overflow-x: scroll;
-    overflow-y: visible;
-    height: 170px;
+    overflow-y: hidden;
+    height: 200px;
     margin-top: -30px;
   }
   .recommended-section::-webkit-scrollbar {
-    display: none;
+    display: block !important;
+    width: 50px !important;
+    height: 3px;
+  }
+  .recommended-section::-webkit-scrollbar-thumb {
+    background: #d6dee1;
+    background-clip: content-box;
+    border-radius: 20px;
+    border: 6px transparent;
   }
   .next,
   .previous {
